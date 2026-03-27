@@ -107,8 +107,8 @@ class GameLevelWater {
         walkingArea: {
             xMin: 0, //left boundary
             xMax: width, //right boundary 
-            yMin: (height * 1/5), //top boundary 
-            yMax: (height * 3/5) //bottom boundary
+            yMin: (height * .25), //top boundary 
+            yMax: (height * .55) //bottom boundary
          },
         speed: 0.5,
         direction: { x: 1, y: 1 },
