@@ -105,8 +105,8 @@ class GameLevelWater {
          },
           //walking area creates the box where the Shark can walk in 
         walkingArea: {
-            xMin: (width * 1/5), //left boundary
-            xMax: (width * 4/5), //right boundary 
+            xMin: 0, //left boundary
+            xMax: width, //right boundary 
             yMin: (height * 1/5), //top boundary 
             yMax: (height * 3/5) //bottom boundary
          },
