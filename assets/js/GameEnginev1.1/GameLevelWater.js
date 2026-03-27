@@ -98,7 +98,7 @@ class GameLevelWater {
         pixels: {height: 225, width: 225},
         INIT_POSITION: { x: 100, y: 100},
         orientation: {rows: 1, columns: 1 },
-        down: {row: 0, start: 0, columns: 1 },
+        down: {row: 0, start: 0, columns: 1, wiggle: 0.005 },
         right: {row: 0, start: 0, columns: 1, wiggle: 0.005 },
         left: {row: 0, start: 0, columns: 1, wiggle: 0.005, mirror: true }, // mirror is used to flip the sprite
         hitbox: { widthPercentage: 0.25, heightPercentage: 0.55
