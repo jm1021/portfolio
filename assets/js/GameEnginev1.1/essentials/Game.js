@@ -75,7 +75,7 @@ class GameCore {
 
     async _initializeGameControlAsync(gameLevelClasses) {
         try {
-            const mod = await import(`${this.path}@assets/js/GameEnginev1.1/essentials/GameControl.js`);
+            const mod = await import(`${this.path}/assets/js/GameEnginev1.1/essentials/GameControl.js`);
             const DefaultGameControl = mod.default || mod;
             this.gameControl = new DefaultGameControl(this, gameLevelClasses);
             this.gameControl.start();
@@ -155,7 +155,7 @@ class GameCore {
         
         try {
             // v1.1 stores the pause code in PauseMenu.js (not "PauseFeature").
-            import(`${this.path}@assets/js/GameEnginev1.1/essentials/PauseMenu.js`).then(mod => {
+            import(`${this.path}/assets/js/GameEnginev1.1/essentials/PauseMenu.js`).then(mod => {
                 const PauseMenu = mod.default;
                 // PauseMenu expects the gameControl instance directly
                 const pauseMenuInstance = new PauseMenu(this.gameControl, {});
@@ -479,7 +479,7 @@ class GameCore {
                     console.warn('Failed to create leaderboard from environment class:', err);
                 }
             } else {
-                import(`${this.path}@assets/js/GameEnginev1.1/essentials/Leaderboard.js`)
+                import(`${this.path}/assets/js/GameEnginev1.1/essentials/Leaderboard.js`)
                     .then(mod => instantiateLeaderboard(mod.default || mod))
                     .catch(err => {
                         console.warn('Failed to create leaderboard:', err);
