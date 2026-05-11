@@ -97,6 +97,8 @@ jobs:
             echo "Custom domain detected (CNAME file exists), using empty baseurl"
           elif [[ "$NAME" == "$OWNER.github.io" ]]; then
             BASEURL=""
+          elif [[ "${{ github.repository }}" = "Open-Coding-Society/pages" ]]; then
+            BASEURL=""
           else
             BASEURL="/$NAME"
           fi
