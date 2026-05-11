@@ -91,9 +91,11 @@ jobs:
           OWNER=$(echo "$REPO" | cut -d'/' -f1)
           NAME=$(echo "$REPO" | cut -d'/' -f2)
 
-          if [[ "$NAME" == "$OWNER.github.io" ]]; then
+          # Check if custom domain is configured via CNAME file
+          if [ -f "CNAME" ]; then
             BASEURL=""
-          elif [[ "${{ github.repository }}" = "Open-Coding-Society/pages" ]]; then
+            echo "Custom domain detected (CNAME file exists), using empty baseurl"
+          elif [[ "$NAME" == "$OWNER.github.io" ]]; then
             BASEURL=""
           else
             BASEURL="/$NAME"
