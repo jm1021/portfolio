@@ -5,7 +5,7 @@ hide: true
 show_reading_time: false
 ---
 
-Hi! My name is John Mortensen
+Hi! My name is John C. Mortensen
 
 ### Development Environment
 
