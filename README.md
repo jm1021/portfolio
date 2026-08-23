@@ -83,26 +83,48 @@ Comprehensive start. A topic-by-topic guide to getting this project running is p
 
 Quick start.  A quick start below is a reminder, but is dependent on your knowledge.  Only follow this instruction if you need a refresher.  Always default to the comprehensive start if any problem occurs.
 
-#### Clone Repo
+#### Create From Template, Then Clone
 
-Run these commands to obtain the project, then locate into the project directory with the terminal, install an extensive set of tools, and make.
+Start by creating your own repository from the Open Coding Society template, then clone your copy locally.
+
+1. On GitHub, open `open-coding-society/portfolio` and select **Use this template**.
+2. Create your new repository and keep the repository name as `portfolio` initially (for example: `yourname/portfolio`). This avoids immediate `site.baseurl` and `_config.yml` changes while you are learning the workflow.
+3. Clone your repository and enter the repository root.
 
 ```bash
-git clone <this-repo> # git clone https://github.com/open-coding-society/portfolio.git 
-cd <repo-dir>/scripts # cd student 
+git clone https://github.com/<your-account>/portfolio.git
+cd portfolio
+```
+
+#### Keep Template In Sync (Upstream + Merge)
+
+Add Open Coding Society as an `upstream` remote once, then periodically merge updates.
+
+```bash
+# from your repository root
+git remote add upstream https://github.com/open-coding-society/portfolio.git
+git remote -v
+
+# get latest template updates
+git fetch upstream
+git checkout main
+git merge upstream/main
+
+# publish merged updates to your repo
+git push origin main
 ```
 
 #### Windows WSL and/or Ubuntu or Kali Users
 
-- Execute the script: `./activate_ubuntu.sh` or `./activate_kali.sh`
+- Execute the script: `./scripts/activate_ubuntu.sh` or `./scripts/activate_kali.sh`
 
 #### macOS Users
 
-- Execute the script: `./activate_macos.sh`
+- Execute the script: `./scripts/activate_macos.sh`
 
 #### Kasm Cloud Desktop Users
 
-- Execute the script: `./activate_github.sh`
+- Execute the script: `./scripts/activate_github.sh`
 
 ## Run Server on localhost
 

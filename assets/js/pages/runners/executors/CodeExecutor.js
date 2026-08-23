@@ -48,7 +48,7 @@ export class CodeExecutor {
         execTimeSpan.textContent = `⏱Execution time: ${Date.now() - startTime}ms`;
       }
     } catch (err) {
-      if (lang === 'javascript') {
+      if (lang === 'javascript' && isLocalhost) {
         this.runJavaScriptFallback(code, startTime);
       } else {
         outputDiv.textContent = 'Error: ' + err.message;
