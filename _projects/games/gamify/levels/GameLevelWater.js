@@ -103,7 +103,7 @@ class GameLevelWater {
         left: {row: 0, start: 0, columns: 1, wiggle: 0.005, mirror: true }, // mirror is used to flip the sprite
         hitbox: { widthPercentage: 0.25, heightPercentage: 0.55
          },
-          //walking area creates the box where the Shark can walk in 
+        //walking area creates the box where the Shark can swim 
         walkingArea: {
             xMin: 0, //left boundary
             xMax: width, //right boundary 
@@ -118,7 +118,6 @@ class GameLevelWater {
     // Nezuko NPC sprite data
     const sprite_src_nezuko = path + "/images/projects/gamify/water/nezuko.png"; // be sure to include the path
     const sprite_greet_nezuko = "I've never seen you before. Are you lost? Well, even if you are.. I don't think I'm going to help you get out of here.";
-    const platformerLink = "https://pages.opencodingsociety.com/navigation/game.html"; // Replace this with your actual platformer game link
 
     const sprite_data_nezuko = {
       id: 'Nezuko',
@@ -132,9 +131,6 @@ class GameLevelWater {
       down: {row: 0, start: 0, columns: 3 },
       hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
 
-      onCollision: function(player) {
-        window.location.href = platformerLink;
-      }
     };
 
 const sprite_src_puffer = path + "/images/projects/gamify/water/puffer.png";
