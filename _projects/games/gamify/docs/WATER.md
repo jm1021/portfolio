@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Adventure Game - Sample Level Documentation
+title: Gamify - Water Level Documentation
 description: Example of how to document a level while building a team gamify project
 category: Gamify
 breadcrumb: true
-permalink: /gamify/gamelevelwater
+permalink: /gamify/docs/water
 ---
 
 ## Why Document Your Work
@@ -22,13 +22,13 @@ Keep documentation lightweight and useful:
 
 ## Sample Focus: GameLevelWater
 
-This sample uses `GameLevelWater.js` because it already has a clear theme, background, player, and NPC/enemy setup.
+This sample uses `GameLevelWater.js` because with a water theme, background, player, and NPC/enemy setup.
 
 ## Example Documentation Entry
 
 ### Goal
 
-Build a water-themed level that teaches students how a level is assembled from background, player, NPC, and enemy objects.
+Build a water-themed level that helps coder learn how a level is assembled from background, player, NPC, and enemy objects.
 
 ### Files Added 
 
@@ -47,7 +47,7 @@ Build a water-themed level that teaches students how a level is assembled from b
 
 ### How We Tested
 
-- Ran `make dev`
+- Run `make dev`
 - Opened the local site and loaded the gamify project
 - Checked that the background loaded correctly
 - Verified the player sprite rendered and moved

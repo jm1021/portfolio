@@ -4,7 +4,7 @@ title: Adventure Game - Overview
 description: README starting documentation for the adventure game 
 category: Gamify
 breadcrumb: true
-permalink: /gamify/overview
+permalink: /gamify/docs/readme
 ---
 
 ## Directory Structure
@@ -36,31 +36,25 @@ Runtime/distributed outputs are generated into GitHub Pages folders by Makefile:
 
 Primary SDLC workflow:
 
+Build everything:
+
+```bash
+make 
+```
+
+Clean up old and build everything:
+
+```bash
+make refresh # use when you rename elements
+```
+
+Only build priority projects:
+
 ```bash
 make dev
 ```
 
-This is the main build-and-test loop for development. It starts Jekyll and the registered project watchers so edits are copied, converted, and regenerated automatically.
-
-Before using live regeneration with make dev, install fswatch:
-
-```bash
-# macOS
-brew install fswatch
-
-# Ubuntu/Debian
-sudo apt install fswatch
-```
-
-Without fswatch, the project watcher falls back to manual rebuild instructions instead of auto-regeneration.
-
-Validate this project after make dev when you want to force a full re-copy of distributed files.
-
-Use this when:
-
-- You renamed files or folders.
-- You want to confirm files were copied to expected runtime directories.
-- You want to isolate one project's distribution behavior while debugging.
+Alternates:
 
 ```bash
 make -C _projects/gamify build
@@ -118,8 +112,8 @@ Use runtime absolute paths in code.
 // Image path from gameEnv
 const sprite = gameEnv.path + '/images/projects/gamify/knight.png';
 
-// Shared game engine import
-import GameControl from '/assets/js/GameEnginev1.1/essentials/GameControl.js';
+// Shared game engine import, the @ is changed by jekyll to relative path
+import GameControl from '@assets/js/GameEnginev1.1/essentials/GameControl.js';
 ```
 
 ## Registration Model
@@ -134,7 +128,7 @@ No Makefile fragments or project-specific root targets are required.
 
 ## Version Control Strategy
 
-Track source files in _projects. Treat distributed files as generated artifacts.
+Track source files in _projects. Treat files built by make as generated artifacts, they should to be be in GitHub
 
 ```gitignore
 # Track source
@@ -149,7 +143,7 @@ _posts/projects/gamify/
 
 ## Notes
 
-This README is the baseline introduction to the build system concepts. Real-world, deeper references belong in the cs-pathway docs.
+This README is the baseline introduction to the build system concepts for this project. Real-world, deeper references belong in the main README.
 
 For an example of lightweight team documentation, see the sample GameLevelWater write-up:
 
