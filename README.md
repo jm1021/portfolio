@@ -98,28 +98,23 @@ cd portfolio
 
 #### Keep Template In Sync (Upstream + Merge)
 
-Add Open Coding Society as an `upstream` remote once, then periodically merge updates.
-
-If students created their repository with **Use this template**, the first merge can fail with:
-`fatal: refusing to merge unrelated histories`
-because the template repo starts with a separate root commit.
+Add Open Coding Society as an `upstream` remote once, then periodically merge updates. This help you keep up with dynamic character of a portfolio project.
 
 ```bash
-# from your repository root, do this once
+#  In your repository, do this once
 git remote add upstream https://github.com/open-coding-society/portfolio.git
-git remote -v
+git remote -v # verify sucess
 
 # first sync for template-created repos (run once if you see unrelated histories)
 git fetch upstream
+# if fetch fails, remove and try again with correct location: get remote remove upstream
+
+# this part is the downstream update, work through best option
+git merge upstream/main
 git merge upstream/main --allow-unrelated-histories
 git merge upstream/main --allow-unrelated-histories -X theirs # destructive resolve
 
-# routine sync after the first merge
-git fetch upstream
-git merge upstream/main
-
-# publish merged updates to your repo
-git push origin main
+# resolve conflicts, for instance VSCode will have them in Version Control secton with Continue button 
 ```
 
 #### Windows WSL and/or Ubuntu or Kali Users
@@ -130,21 +125,16 @@ git push origin main
 
 - Execute the script: `./scripts/activate_macos.sh`
 
-#### Kasm Cloud Desktop Users
+#### Setup connection to GitHub
 
-- Execute the script: `./scripts/activate_github.sh`
+- Execute the script: `./scripts/activate.sh`
 
-## Run Server on localhost
+#### Prep project to serve on localhost
 
-To preview the project you will need to "make" the project.
-
-### Bundle install
-
-The very first time you clone run project you will need to run this Ruby command as the final part of your setup.
-
-```bash
-bundle install
-```
+- Execute the script: `./scripts/venv.sh`
+- Source the virtual environment: `source venv/bin/activate`
+- Build localhost server:  `make`
+- Look for and click on server line output, perhaps `Server address: http://localhost:4500/portfolio/`.  The Port and baseurl may change.
 
 ### Jupyter Kernels
 
@@ -154,24 +144,6 @@ To run many of the IPYNB files you will need to install Jupyter kernels for the 
 
 - **Python3** (ipykernel): For Python code cells and most data science workflows.
 - **Java** (IJava or jbang-ijava): For Java code cells and Java notebooks.
-- **JavaScript** (tslab): For JavaScript code cells and JavaScript notebooks.
-
-#### Installing tslab
-
-First, Install tslab
-```
-npm install -g tslab
-```
-
-Second, confirm it's installed
-```
-tslab install --version
-```
-
-Finally, register it to your Jupyter environment
-```
-tslab install
-```
 
 #### Installing IJava or JBang
 
@@ -207,8 +179,6 @@ Available kernels:
   python3        /Users/username/Library/Jupyter/kernels/python3
   java           /Users/username/Library/Jupyter/kernels/java
   jbang-ijava    /Users/username/Library/Jupyter/kernels/jbang-ijava
-  jslab          /Users/username/Library/Jupyter/kernels/jslab
-  tslab          /Users/username/Library/Jupyter/kernels/tslab
 ```
 
 Recommended Kernels
