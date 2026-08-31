@@ -112,10 +112,11 @@ git remote -v
 # first sync for template-created repos (run once if you see unrelated histories)
 git fetch upstream
 git merge upstream/main --allow-unrelated-histories
+git merge upstream/main --allow-unrelated-histories -X theirs # destructive resolve
 
 # routine sync after the first merge
 git fetch upstream
-git merge upstream/main --allow-unrelated-histories -X theirs
+git merge upstream/main
 
 # publish merged updates to your repo
 git push origin main
