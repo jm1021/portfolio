@@ -34,12 +34,12 @@ fi
 # 1. APT Packages
 sudo apt update
 sudo apt install -y python3 python3-pip python-is-python3 python3-venv ruby-full build-essential \
-    zlib1g-dev jupyter-notebook sqlite3 lsof
+    ruby-dev pkg-config libssl-dev libyaml-dev libffi-dev zlib1g-dev jupyter-notebook sqlite3 lsof
 
 # 2. Ruby Gems
 sudo mkdir -p "$GEM_HOME"
 sudo chmod -R 777 "$GEM_HOME"
-sudo gem install bundler jekyll benchmark openssl zlib racc bigdecimal drb unicode-display_width \
+sudo gem install bundler jekyll benchmark zlib racc bigdecimal drb unicode-display_width \
                  logger etc fileutils ipaddr mutex_m ostruct rss strscan stringio time
 
 # 3. Python3 is Python
@@ -49,6 +49,7 @@ pip --version
 ruby -v
 bundle -v
 gem --version
+ruby -ropenssl -e 'puts OpenSSL::OPENSSL_VERSION'
 
 # Restart the terminal
 echo "All tools are set up successfully!"
