@@ -45,12 +45,8 @@ _posts/**/*_DOCX_.md
 _docx/~$*
 *.tmp
 
-# Auto-generated course-specific files (build-time only)
-_posts/**/*_csp.md
-_posts/**/*_csa.md
-_posts/**/*_csse.md
-
 # Project distributions (auto-generated from _projects/ source)
+_includes/projects/
 _notebooks/projects/
 _posts/projects/
 _sass/projects/
@@ -63,20 +59,25 @@ _projects/*/Makefile
 _projects/*/*/Makefile
 # Except the template itself (single source of truth)
 !_projects/_template/Makefile
+# Existing versioned overrides remain tracked; force-add any new intentional override.
+
+# Project pages (deployed from _projects/ at build time to _posts/)
+_posts/projects/
 
 # Post generations
-_posts/**/*_cwgu.md
+_posts/**/*_csh.md
 _posts/**/*_content.md
 
 # Multiple formats of the same content (auto-generated)
+# Auto-generated course-specific files (build-time only)
+_posts/**/*_csp.md
+_posts/**/*_csa.md
+_posts/**/*_csse.md
+_posts/**/*_cwgu.md
 _notebooks/**/*_csp.ipynb
 _notebooks/**/*_csa.ipynb
 _notebooks/**/*_csse.ipynb
-_notebooks/**/*_cwgu.ipynb
-_notebooks/**/*_csp.md
-_notebooks/**/*_csa.md
-_notebooks/**/*_csse.md
-_notebooks/**/*_cwgu.md
+_notebooks/**/*_csh.ipynb
 _notebooks/**/*_content.md
 
 # remove all the .scss cache files
