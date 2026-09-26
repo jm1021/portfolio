@@ -110,6 +110,5 @@ minima:
     - { platform: x, user_url: "https://x.com/Open_Coding" }
     - { platform: youtube, user_url: "https://www.youtube.com/@OpenCodingSociety" } 
   nav_pages:
-    - navigation/blog.md
     - navigation/search.md
     - navigation/about.md
